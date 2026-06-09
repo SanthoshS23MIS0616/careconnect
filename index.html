@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CareConnect is a mini healthcare support web app prototype for Jarurat Care NGO with support forms, smart automation, and a secure Groq AI FAQ assistant." />
+  <title>CareConnect | Jarurat Care Patient Support Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CareConnect home">
+        <img src="assets/careconnect-mark.svg" alt="" />
+        <span>CareConnect</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#support">Support</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="#awareness">Awareness</a>
+      </nav>
+      <a class="header-action" href="#support">Request Help</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Jarurat Care Patient Support Portal</p>
+          <h1 id="hero-title">Care that reaches people faster.</h1>
+          <p class="hero-text">A calm support space for patients, caregivers, volunteers, and coordinators to share needs, receive quick guidance, and move the next step forward with dignity.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#support">Start a Request</a>
+            <a class="secondary-button" href="#assistant">Ask CareBot</a>
+          </div>
+          <div class="trust-row" aria-label="Portal highlights">
+            <span>Patient support</span>
+            <span>Volunteer matching</span>
+            <span>Groq AI FAQ</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="CareConnect support preview">
+          <div class="panel-topline">
+            <span class="status-dot"></span>
+            <span>Live care desk</span>
+          </div>
+          <div class="priority-ring">
+            <span>Smart</span>
+            <strong>Care Priority</strong>
+          </div>
+          <div class="mini-ticket high">
+            <span>High attention</span>
+            <p>Medicine support and urgent callback</p>
+          </div>
+          <div class="mini-ticket medium">
+            <span>Volunteer lead</span>
+            <p>Transport support available this week</p>
+          </div>
+          <div class="mini-ticket low">
+            <span>FAQ answered</span>
+            <p>Document checklist shared instantly</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact-strip" aria-label="CareConnect impact areas">
+        <article><strong>3</strong><span>simple forms</span></article>
+        <article><strong>1</strong><span>AI assistant</span></article>
+        <article><strong>0</strong><span>payment required</span></article>
+      </section>
+
+      <section id="support" class="section support-section" aria-labelledby="support-title">
+        <div class="section-heading">
+          <p class="eyebrow">Support desk</p>
+          <h2 id="support-title">Tell us what kind of help is needed.</h2>
+          <p>CareConnect turns each submission into a coordinator-friendly summary with priority, next steps, and a warm acknowledgement.</p>
+        </div>
+
+        <div class="support-layout">
+          <div class="form-card">
+            <div class="form-tabs" role="tablist" aria-label="Support form type">
+              <button class="tab-button active" type="button" data-tab="patient" role="tab" aria-selected="true">Patient</button>
+              <button class="tab-button" type="button" data-tab="volunteer" role="tab" aria-selected="false">Volunteer</button>
+              <button class="tab-button" type="button" data-tab="contact" role="tab" aria-selected="false">Contact</button>
+            </div>
+
+            <form class="support-form active" data-form="patient" novalidate>
+              <div class="field-grid two">
+                <label>Full name
+                  <input name="fullName" type="text" minlength="2" maxlength="80" placeholder="Patient or caregiver name" required />
+                </label>
+                <label>Phone number
+                  <input name="phone" type="tel" minlength="10" maxlength="15" placeholder="10 digit mobile number" required />
+                </label>
+              </div>
+              <div class="field-grid two">
+                <label>City / area
+                  <input name="city" type="text" maxlength="80" placeholder="Example: Chennai" required />
+                </label>
+                <label>Patient age
+                  <input name="patientAge" type="number" min="1" max="120" placeholder="Optional" />
+                </label>
+              </div>
+              <div class="field-grid two">
+                <label>Support needed
+                  <select name="supportNeeded" required>
+                    <option value="">Choose support</option>
+                    <option>Medicine support</option>
+                    <option>Appointment guidance</option>
+                    <option>Transport help</option>
+                    <option>Financial guidance</option>
+                    <option>Emotional support</option>
+                    <option>Other healthcare support</option>
+                  </select>
+                </label>
+                <label>Urgency
+                  <select name="urgency" required>
+                    <option value="">Choose urgency</option>
+                    <option>Immediate attention</option>
+                    <option>Within 24 hours</option>
+                    <option>This week</option>
+                    <option>General enquiry</option>
+                  </select>
+                </label>
+              </div>
+              <label>Brief situation
+                <textarea name="message" rows="4" maxlength="500" placeholder="Share the need in a few lines" required></textarea>
+              </label>
+              <button class="primary-button full" type="submit">Submit patient request</button>
+            </form>
+
+            <form class="support-form" data-form="volunteer" novalidate>
+              <div class="field-grid two">
+                <label>Full name
+                  <input name="fullName" type="text" minlength="2" maxlength="80" placeholder="Volunteer name" required />
+                </label>
+                <label>Email
+                  <input name="email" type="email" maxlength="120" placeholder="name@example.com" required />
+                </label>
+              </div>
+              <div class="field-grid two">
+                <label>Phone number
+                  <input name="phone" type="tel" minlength="10" maxlength="15" placeholder="10 digit mobile number" required />
+                </label>
+                <label>City / area
+                  <input name="city" type="text" maxlength="80" placeholder="Example: Coimbatore" required />
+                </label>
+              </div>
+              <div class="field-grid two">
+                <label>Volunteer skill
+                  <select name="skill" required>
+                    <option value="">Choose skill</option>
+                    <option>Patient calling</option>
+                    <option>Hospital coordination</option>
+                    <option>Transport support</option>
+                    <option>Fundraising</option>
+                    <option>Awareness content</option>
+                  </select>
+                </label>
+                <label>Availability
+                  <select name="availability" required>
+                    <option value="">Choose availability</option>
+                    <option>Weekdays</option>
+                    <option>Weekends</option>
+                    <option>Remote support</option>
+                    <option>Emergency support when possible</option>
+                  </select>
+                </label>
+              </div>
+              <label>Why do you want to help?
+                <textarea name="message" rows="4" maxlength="500" placeholder="Tell Jarurat Care how you can support" required></textarea>
+              </label>
+              <button class="primary-button full" type="submit">Register as volunteer</button>
+            </form>
+
+            <form class="support-form" data-form="contact" novalidate>
+              <div class="field-grid two">
+                <label>Full name
+                  <input name="fullName" type="text" minlength="2" maxlength="80" placeholder="Your name" required />
+                </label>
+                <label>Email or phone
+                  <input name="contact" type="text" maxlength="120" placeholder="How can we reach you?" required />
+                </label>
+              </div>
+              <label>Subject
+                <input name="subject" type="text" maxlength="100" placeholder="Example: Awareness program enquiry" required />
+              </label>
+              <label>Message
+                <textarea name="message" rows="5" maxlength="600" placeholder="Write your message" required></textarea>
+              </label>
+              <button class="primary-button full" type="submit">Send message</button>
+            </form>
+          </div>
+
+          <aside class="result-card" aria-live="polite">
+            <p class="eyebrow">Automation feature</p>
+            <h3>Smart Care Priority Summary</h3>
+            <p class="muted">After a form is submitted, CareConnect prepares a clean acknowledgement, priority level, and coordinator summary.</p>
+            <div id="submissionResult" class="empty-state">
+              <span>Waiting for a request</span>
+              <p>Your generated response will appear here.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="assistant" class="section assistant-section" aria-labelledby="assistant-title">
+        <div class="assistant-copy">
+          <p class="eyebrow">AI idea</p>
+          <h2 id="assistant-title">CareBot answers common support questions.</h2>
+          <p>CareBot uses Groq through a Vercel serverless proxy, so the browser never receives the secret API key. It is designed for FAQs, support navigation, and compassionate non-medical guidance.</p>
+          <div class="ai-safe-note">
+            <strong>Safe scope:</strong> CareBot does not diagnose or replace doctors. For emergencies, it advises contacting local emergency services or a hospital immediately.
+          </div>
+        </div>
+
+        <div class="chat-card">
+          <div class="chat-header">
+            <div><span class="status-dot"></span><strong>CareBot</strong></div>
+            <span id="aiSource">Groq-ready</span>
+          </div>
+          <div id="chatMessages" class="chat-messages">
+            <div class="message bot">Hello, I am CareBot. Ask about patient support, volunteer registration, documents, or how Jarurat Care can respond.</div>
+          </div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" maxlength="260" placeholder="Ask a support FAQ" required />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="awareness" class="section awareness-section" aria-labelledby="awareness-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">NGO use-case</p>
+          <h2 id="awareness-title">Built for clarity, speed, and human care.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon">01</span>
+            <h3>Patient intake</h3>
+            <p>Collect support needs in a structured way so coordinators can respond faster and avoid scattered messages.</p>
+          </article>
+          <article class="feature-card accent-pink">
+            <span class="feature-icon">02</span>
+            <h3>Volunteer routing</h3>
+            <p>Capture skills, availability, and location so the NGO can match help to real patient needs.</p>
+          </article>
+          <article class="feature-card accent-green">
+            <span class="feature-icon">03</span>
+            <h3>AI FAQ support</h3>
+            <p>Answer repeated questions instantly while keeping sensitive API keys protected on the server.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>CareConnect</span>
+    <strong>Santhosh S</strong>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

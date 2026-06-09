@@ -1,0 +1,23 @@
+{
+  "name": "careconnect-jarurat-care",
+  "version": "1.0.0",
+  "description": "Mini healthcare support web app prototype with Groq AI FAQ assistant and smart care priority automation.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check api/chat.js && node --check api/submit.js"
+  },
+  "keywords": [
+    "healthcare",
+    "ngo",
+    "groq",
+    "vercel",
+    "patient-support"
+  ],
+  "author": "Santhosh S",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
