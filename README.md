@@ -6,7 +6,7 @@ Prepared by: **Santhosh S**
 
 ## Live Demo
 
-[Add your deployed Vercel link here after deployment:](https://careconnect-91zs.onrender.com/)
+https://careconnect-91zs.onrender.com/
 
 
 ## Assignment Fit
